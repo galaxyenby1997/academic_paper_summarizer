@@ -1,0 +1,4 @@
+wordnet
+pos_tag
+WordNetLemmatizer
+word_tokenize

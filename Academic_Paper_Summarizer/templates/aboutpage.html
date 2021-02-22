@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+
+	<h2>About</h2>
+
+	<br>
+
+	<p>The website takes the URL you entered, and 
+		collects the entire <br> HTML text of the paper 
+		into a single string. Then, it applies a summary <br>
+		software called "Gensim Summary" to create the 
+		summary paragraph. <br> When you input the number of 
+		words you'd like for the summary, the <br> software 
+		uses that number to figure out the most important <br>
+		sentences in the paper, and condenses it into a 
+		paragraph. In this way, <br> the model extracts the 
+		most informative sentences and then <br> combines them into a summary. 
+	</p>
+
+	<br>
+
+	<p> On this website, the number of keywords is set to a default value of 0.05, <br>
+		which means that the number of words used is reduced by 5%. I'll be <br>
+		working on the site to make keywords a user option. You can choose <br>
+		however many words you want in the "Word Count" option; however, it's advised <br>
+		that you choose a minimum of 100 words; otherwise, the software won't be able <br>
+		to make a good summary. If you choose a too small number and click "Summarize!" <br> 
+		the website will flash a message asking you to provide a higher word-count. <br>
+		When you obtain your summary, feel free to copy+paste it into a word document and <br>
+		make paragraph breaks to clean it! You can refresh the page and make as many <br>
+		summaries of the same paper as you like, with different word counts.
+	</p>
+
+	<br>
+
+	<p> This project was inspired by my unfortunate lack of large amounts of time to read <br>
+		through tens of pages and thousands, hundreds of thousands of words of professors' <br>
+		research papers in an attempt to understand their work so I could find an opportunity <br>
+		to work with them as a research student intern.
+		<br>
+		<br>
+		For now, this app summarizes the paper's text as a whole. In the near future, I'll <br>
+		work on making the app detect particular named-sections of the text ("Introduction", <br>
+		"Methods", "Discussion", etc.) and produce summaries for each, and then <br>
+		combine those into a large summary, so it'll be easier to read.
+		
+
+	</p>
+
+	<p> I hope you enjoy this application! I'll be making the source code accessible soon. <br>
+		I'd love to receive feedback, especially from college, graduate students <br> 
+		and staff members (who are taking classes) if they'll be using this tool to <br> 
+		help summarize their professors, researchers, or advisors' paper for discussion. <br>
+		This application is in its infancy and has lots of room for improvement, and any <br>
+		contructive and helpful feedback is welcomed! 
+		<br> 
+		<br>
+		Send me an email with your feedback and suggestions at: aapiqtadvocate@gmail.com!
+	</p>
+
+	<br>
+
+	<br>
+
+	<h4> About the Algorithm and software behind the site: </h4>
+
+	<p> The software behind this web app is based on the "Gensim Summary" <br>
+		software. Gensim's summarization software is based on the <br>
+		TextRank (and Google's PageRank) algorithm; it's a network tool <br> 
+		that uses sentence similarity to extract sentences in a text. <br> 
+		The similarity is determined from word content and word context. <br>
+		The most important sentences are collected and put into a <br>
+		summary paragraph. A similar model  applied to just words <br> (instead 
+		of sentences), is used to find the important keywords. After this, <br>
+		I used a list of 7,600 common English nouns, adjectives, and adverbs <br>
+		to filter out words that might not be informative of the subject. This <br>
+		is combined into a final keyword list that you see on the summarizer <br>
+		page.
+	</p>
+
+{% endblock content %}
